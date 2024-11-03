@@ -19,6 +19,7 @@ jobs:
     - name: Force update repository
       run: |
         git clone https://github.com/xksoft/OcrHelper.git
+        cd OcrHelper
 
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1
