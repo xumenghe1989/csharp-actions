@@ -17,17 +17,17 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Force update repository
-      run: |
+      run: 
         git clone https://github.com/xksoft/OcrHelper.git
 
     - name: Restore NuGet packages
-      run: nuget restore D:\a\csharp-actions\csharp-actions\OcrHelper\OcrHelper.sln
+      run: nuget restore OcrHelper.sln
       
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1
 
     - name: Build Solution
-      run: 
+      run: |
         cd OcrHelper
         msbuild OcrHelper.sln /p:Configuration=Release
 
