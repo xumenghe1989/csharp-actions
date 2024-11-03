@@ -37,7 +37,7 @@ jobs:
     - name: Compress Output Directory
       run: |
         cd OcrHelper/bin
-        Compress-Archive -Path net6.0-windows -DestinationPath OcrHelper-output.zip
+        Compress-Archive -Path bin\Release -DestinationPath OcrHelper-output.zip
 
     - name: Archive Output
       uses: actions/upload-artifact@v3
