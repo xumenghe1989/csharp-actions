@@ -21,7 +21,9 @@ jobs:
         git clone https://github.com/xksoft/OcrHelper.git
         cd D:\a\csharp-actions\csharp-actions\OcrHelper
         cd
-
+    - name: Restore NuGet packages
+      run: nuget restore D:\a\csharp-actions\csharp-actions\OcrHelper\OcrHelper.sln
+      
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1
 
