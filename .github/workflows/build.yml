@@ -19,8 +19,7 @@ jobs:
     - name: Force update repository
       run: |
         git clone https://github.com/xksoft/OcrHelper.git
-        cd 
-        cd OcrHelper
+
     - name: Restore NuGet packages
       run: nuget restore D:\a\csharp-actions\csharp-actions\OcrHelper\OcrHelper.sln
       
@@ -28,7 +27,9 @@ jobs:
       uses: microsoft/setup-msbuild@v1
 
     - name: Build Solution
-      run: msbuild D:\a\csharp-actions\csharp-actions\OcrHelper\OcrHelper.sln /p:Configuration=Release
+      run: 
+        cd OcrHelper
+        msbuild OcrHelper.sln /p:Configuration=Release
 
     - name: Archive Output
       uses: actions/upload-artifact@v3
