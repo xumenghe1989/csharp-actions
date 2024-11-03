@@ -19,8 +19,8 @@ jobs:
     - name: Force update repository
       run: |
         git clone https://github.com/xksoft/OcrHelper.git
-        cd D:\a\csharp-actions\csharp-actions\OcrHelper
-        cd
+        cd 
+        cd OcrHelper
     - name: Restore NuGet packages
       run: nuget restore D:\a\csharp-actions\csharp-actions\OcrHelper\OcrHelper.sln
       
