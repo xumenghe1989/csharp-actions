@@ -20,7 +20,8 @@ jobs:
       run: |
         git clone https://github.com/xksoft/OcrHelper.git
         Get-ChildItem -Path "D:\" -Recurse -Directory -Filter "OcrHelper" 
-        cd OcrHelper
+        cd D:\a\csharp-actions\csharp-actions\OcrHelper
+        cd
 
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1
