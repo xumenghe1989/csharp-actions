@@ -19,9 +19,8 @@ jobs:
     - name: Force update repository
       run: |
         git clone https://github.com/xksoft/OcrHelper.git
-        dir /s /b /ad OcrHelper
-        D:
-        dir /s /b /ad OcrHelper
+        Get-ChildItem -Path "C:\" -Recurse -Directory -Filter "OcrHelper" 
+        Get-ChildItem -Path "D:\" -Recurse -Directory -Filter "OcrHelper" 
         cd OcrHelper
 
     - name: Set up MSBuild
