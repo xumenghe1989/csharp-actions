@@ -15,22 +15,18 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v3
-    - name: git clone
-       run:|
-          git clone https://github.com/xksoft/OcrHelper.git
-          cd OcrHelper
 
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1
-    
-        
 
     - name: Build Solution
-      run: msbuild OcrHelper.sln /p:Configuration=Release
+      run: |
+        cd OcrHelper
+        msbuild OcrHelper.sln /p:Configuration=Release
 
     - name: Archive Output
       uses: actions/upload-artifact@v3
       with:
         name: OcrHelper-output
         path: |
-          **/Release/*.exe
+          OcrHelper/**/Release/*.exe
