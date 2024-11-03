@@ -18,6 +18,11 @@ jobs:
 
     - name: Set up MSBuild
       uses: microsoft/setup-msbuild@v1
+    - name: git clone
+        run:|
+          git clone https://github.com/xksoft/OcrHelper.git
+          cd OcrHelper
+        
 
     - name: Build Solution
       run: msbuild OcrHelper.sln /p:Configuration=Release
